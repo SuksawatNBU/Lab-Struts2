@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="email-wildcard" namespace="/jsp/wildcard" extends="struts-default">
+		
+		<action name="*Email" class="com.cct.labstruts2.web.wildcard.action.EmailAction" method="{1}">
+			<result name="init">/jsp/lab/wildcard/email/searchEmail.jsp</result>
+			<result name="search">/jsp/lab/wildcard/email/searchEmail.jsp</result>
+			<result name="gotoAdd">/jsp/lab/wildcard/email/addEmail.jsp</result>
+			<result name="gotoAdd">/jsp/lab/wildcard/email/addEmail.jsp</result>
+			<result name="add">/jsp/lab/wildcard/email/addEmail.jsp</result>
+			<result name="searchDo" type="chain">
+				<param name="actionName">searchEmail</param>
+				<param name="namespace">/jsp/wildcard</param>
+			</result>
+		</action>
+	</package>
+</struts>

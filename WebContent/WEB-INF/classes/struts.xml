@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	
+	<!-- Resource bundle -->
+	<constant name="struts.custom.i18n.resources" value="
+		  resources.bundle.common.Message
+		  ,resources.bundle.actionsupport.MessageAction
+		  ,resources.bundle.bundle.MessageBundle
+	"/>
+
+	<include file="strutsconfig/bundle/struts-resource-bundle.xml" />
+	<include file="strutsconfig/ognl/struts-ognl.xml" />
+	<include file="strutsconfig/actionsupport/struts-action-support.xml" />
+	<include file="strutsconfig/interceptor/struts-interceptor.xml" />
+	<include file="strutsconfig/globalexception/struts-global-exception.xml" />
+	<include file="strutsconfig/wildcard/struts-wildcard.xml" />
+	<include file="strutsconfig/modeldriven/struts-model-driven.xml" />
+	<include file="strutsconfig/strutstag/struts-tag.xml" />
+	
+</struts>

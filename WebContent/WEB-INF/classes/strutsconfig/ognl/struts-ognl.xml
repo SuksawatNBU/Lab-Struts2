@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="pre-ognl" namespace="/jsp/pre-ognl" extends="struts-default">
+		
+		<action name="*PreAction" class="com.cct.labstruts2.web.ognl.action.PreOGNLAction" method="{1}">
+			<result name="success" type="chain">
+	            <param name="actionName">initPostAction</param>
+	            <param name="namespace">/jsp/post-ognl</param>
+			</result>
+		</action>
+		
+	</package>
+	
+	<package name="post-ognl" namespace="/jsp/post-ognl" extends="struts-default">
+	
+		<action name="*PostAction" class="com.cct.labstruts2.web.ognl.action.PostOGNLAction" method="{1}">
+			<result name="success">/jsp/lab/ognl/ognl.jsp?param2=World</result>
+		</action>
+		
+	</package>
+</struts>

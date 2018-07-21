@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="booking" namespace="/jsp/interceptor" extends="struts-default">
+		
+		<interceptors>
+			<interceptor-stack name="bookingStack">
+				<interceptor-ref name = "defaultStack"/>
+				<interceptor-ref name = "token" >
+					<param name="includeMethods">add*</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			<interceptor name = "bookingInterceptor" class = "com.cct.labstruts2.web.interceptor.action.BookingValidateIntercaptor" />
+		</interceptors>
+
+		<action name="*Booking" class="com.cct.labstruts2.web.interceptor.action.BookingAction" method="{1}">
+			<interceptor-ref name = "bookingStack" />
+			<interceptor-ref name = "bookingInterceptor" />
+			
+			<result name="init">/jsp/lab/interceptor/booking/searchBooking.jsp</result>
+			<result name="search">/jsp/lab/interceptor/booking/searchBooking.jsp</result>
+			<result name="gotoAdd">/jsp/lab/interceptor/booking/addBooking.jsp</result>
+			<result name="add">/jsp/lab/interceptor/booking/addBooking.jsp</result>
+			<result name="searchDo" type="chain">
+				<param name="actionName">searchBooking</param>
+				<param name="namespace">/jsp/interceptor</param>
+			</result>
+			
+			<result name="invalid.bookingName">/jsp/lab/interceptor/booking/invalidBookingName.jsp</result>
+			<result name="invalid.token">/jsp/lab/interceptor/booking/invalidToken.jsp</result>
+		</action>
+	</package>
+
+</struts>

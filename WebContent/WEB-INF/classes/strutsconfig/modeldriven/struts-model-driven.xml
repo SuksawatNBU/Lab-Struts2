@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="model-driven" namespace="/jsp/model" extends="struts-default">
+
+		<action name="*Privilege" class="com.cct.labstruts2.web.modeldriven.action.ImplementModelDrivenAction" method="{1}">
+			<result name="load">/jsp/lab/modeldriven/searchPrivilegeMain.jsp</result>
+			<result name="init">/jsp/lab/modeldriven/searchPrivilege.jsp</result>
+			<result name="success">/jsp/lab/modeldriven/searchPrivilege.jsp</result>
+		</action>
+		<action name="*Privileges" class="com.cct.labstruts2.web.modeldriven.action.UnImplementModelDrivenAction" method="{1}">
+			<result name="init">/jsp/lab/modeldriven/searchPrivilegeWithoutModelDriven.jsp</result>
+			<result name="success">/jsp/lab/modeldriven/searchPrivilegeWithoutModelDriven.jsp</result>
+		</action>
+		
+	</package>
+</struts>

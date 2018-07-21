@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts-tag" namespace="/jsp/strutstag" extends="struts-default">
+
+		<action name="*Course" class="com.cct.labstruts2.web.strutstag.action.CourseAction" method="{1}">
+			<result name="init">/jsp/lab/strutstag/searchCourse.jsp</result>
+			<result name="success">/jsp/lab/strutstag/searchCourse.jsp</result>
+			<result name="view">/jsp/lab/strutstag/viewCourse.jsp</result>
+		</action>
+		
+	</package>
+</struts>
